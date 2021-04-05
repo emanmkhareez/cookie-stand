@@ -1,9 +1,144 @@
 
 let Hour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-console.log(Hour.length, Hour)
- function perHpur (min, max) {
+console.log(Hour.length, Hour);
+
+function perHpur(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
+let salmon=[];
+//constructor 
+function City(nameCity,min, max, avrage) {
+    this.nameCity=nameCity;
+    this.min = min;
+
+    this.max = max;
+    this.avrage = avrage;
+    this.customerPerHour= [];
+    this.avrageCookie=[];
+    total=0;
+
+   
+
+/*
+this.CustomPerHour=function(){
+    for (let i = 0; i < Hour.length; i++) {
+        let num = perHpur(this.min, this.max);
+        this.customerPerHour[i] = num;
+
+
+
+
+    }
+
+
+
+}
+*/
+
+salmon.push(this);
+
+
+}
+
+
+
+//protoype customer
+City.prototype.CustomPerHour=function () {
+    for (let i = 0; i < Hour.length; i++) {
+        let num = perHpur(this.min, this.max);
+        console.log(num);
+        //console.log(this.customerPerHour);
+        this.customerPerHour.push(num);
+
+
+
+
+    }
+
+
+}
+
+
+// protoype averageCookiesPurchased 
+City.prototype.averageCookiesPurchased=function () {
+    for (let i = 0; i < Hour.length; i++) {
+        //      
+        this.avrageCookie.push(Math.floor(this.customerPerHour[i] * this.avrage));
+        this.total += this.avrageCookie[i];
+
+
+
+    }}
+
+// seattle obj
+       let Seattle = new City('seattle',23, 65, 6.3);
+       console.log(Seattle);
+       Seattle.CustomPerHour();
+       Seattle.averageCookiesPurchased();
+       
+// tokyo obj
+
+       let  Tokyo= new City('Tokyo',3, 21, 1.2);
+       console.log(Tokyo);
+       Tokyo.CustomPerHour();
+       Tokyo.averageCookiesPurchased();
+ //Dubai obj 
+       let Dubai = new City('Dubai',11, 38, 3.7);
+       console.log(Dubai);
+       Dubai.CustomPerHour();
+       Dubai.averageCookiesPurchased();
+//paris
+       let Paris = new City('paris',20, 38, 2.3);
+       console.log(Paris);
+       Paris.CustomPerHour();
+       Paris.averageCookiesPurchased();
+//Lima
+       let  Lima= new City('Lima',2, 16, 4.6);
+       console.log(Lima);
+       Lima.CustomPerHour();
+       Lima.averageCookiesPurchased();
+
+
+       
+       
+      
+
+    console.log(salmon);
+
+
+
+
+
+let parent=document.getElementById('parent');
+//create table
+let tableElement=document.createElement('table');
+//append 
+parent.appendChild(tableElement);
+//tr
+let trtable=document.createElement('tr');
+//append tr
+tableElement.appendChild(trtable);
+// render 
+City.prototype.render=function(){
+let thfirst=document.createElement('th');
+trtable.appendChild(thfirst);
+thfirst.textContent="  ";
+
+for(i=0;i<=Hour.length;i++){
+    let thHeader=document.createElement('th');
+    trtable.appendChild(thHeader);
+    thHeader.textContent=Hour[i];}
+    
+}
+
+
+Seattle.render();
+
+
+
+/*
+ lab-6 
+
 let Seattle = {
     min: 23,
     max: 65,
@@ -12,15 +147,15 @@ let Seattle = {
     avrageCookie:[],
     total:0,
 
-    
+
 
     customerper: function () {
         for (let i = 0; i < Hour.length; i++) {
             let num = perHpur(this.min, this.max);
-              Seattle.customerPerHour[i] = num;
-              
-            
-            
+              this.customerPerHour[i] = num;
+
+
+
 
         } },
         averageCookiesPurchased :function(){
@@ -30,8 +165,8 @@ let Seattle = {
               this.avrageCookie.push(Math.floor(this.customerPerHour[i]*this.avrage));
              this.total+=this.avrageCookie[i];
 
-                 
-                
+
+
             }
         },
         finaly:function(){
@@ -50,25 +185,25 @@ let Seattle = {
           let total=document.createElement('li');
           child.appendChild(total);
           total.textContent='total     '+Seattle.total+'cookies';
-          
-          
-          
+
+
+
 
         }
-        
 
-    
+
+
     };
 
-    
+
    console.log( Seattle.customerper());
    console.log(Seattle.customerPerHour)
    console.log(Seattle.averageCookiesPurchased())
    console.log(Seattle.avrageCookie)
    Seattle.finaly();
- 
- 
-   
+
+
+
 
 //Tokyo
 
@@ -79,26 +214,26 @@ let Seattle = {
         customerPerHour: [],
         avrageCookie:[],
         total:0,
-    
-        
-    
+
+
+
         customerper: function () {
             for (let i = 0; i < Hour.length; i++) {
                 let num = perHpur(this.min, this.max);
                 this.customerPerHour[i] = num;
-                  
-                
-                
-    
+
+
+
+
             } },
             averageCookiesPurchased :function(){
                 for(let i=0;i<Hour.length;i++){
-        //      
+        //
                   this.avrageCookie.push(Math.floor(this.customerPerHour[i]*this.avrage));
                  this.total+=this.avrageCookie[i];
-    
-                     
-                    
+
+
+
                 }
             },
             finaly:function(){
@@ -117,22 +252,22 @@ let Seattle = {
       let total=document.createElement('li');
       ulElement.appendChild(total);
       total.textContent='total     '+this.total+'cookies';
-    
-    
-    
+
+
+
             }
-            
-    
-        
+
+
+
         };
         console.log( Tokyo.customerper());
         console.log(Tokyo.customerPerHour)
         console.log(Tokyo.averageCookiesPurchased())
         console.log(Tokyo.avrageCookie)
         Tokyo.finaly();
-        
 
- 
+
+
 
 
     //Dubai
@@ -144,26 +279,26 @@ let Seattle = {
         customerPerHour: [],
         avrageCookie:[],
         total:0,
-    
-        
-    
+
+
+
         customerper: function () {
             for (let i = 0; i < Hour.length; i++) {
                 let num = perHpur(this.min, this.max);
                 this.customerPerHour[i] = num;
-                  
-                
-                
-    
+
+
+
+
             } },
             averageCookiesPurchased :function(){
                 for(let i=0;i<Hour.length;i++){
-        //      
+        //
                   this.avrageCookie.push(Math.floor(this.customerPerHour[i]*this.avrage));
                  this.total+=this.avrageCookie[i];
-    
-                     
-                    
+
+
+
                 }
             },
             finaly:function(){
@@ -182,13 +317,13 @@ let Seattle = {
       let total=document.createElement('li');
       ulElement.appendChild(total);
       total.textContent='total     '+Dubai.total+'cookies';
-    
-    
-    
+
+
+
             }
-            
-    
-        
+
+
+
         };
         console.log( Dubai.customerper());
         console.log(Dubai.customerPerHour)
@@ -196,7 +331,7 @@ let Seattle = {
         console.log(Dubai.avrageCookie)
         Dubai.finaly();
 
-    
+
 
  //Paris
 
@@ -207,26 +342,26 @@ let Seattle = {
         customerPerHour: [],
         avrageCookie:[],
         total:0,
-    
-        
-    
+
+
+
         customerper: function () {
             for (let i = 0; i < Hour.length; i++) {
                 let num = perHpur(this.min, this.max);
                 this.customerPerHour[i] = num;
-                  
-                
-                
-    
+
+
+
+
             } },
             averageCookiesPurchased :function(){
                 for(let i=0;i<Hour.length;i++){
-        //      
+        //
                   this.avrageCookie.push(Math.floor(this.customerPerHour[i]*this.avrage));
                  this.total+=this.avrageCookie[i];
-    
-                     
-                    
+
+
+
                 }
             },
             finaly:function(){
@@ -245,20 +380,20 @@ let Seattle = {
       let total=document.createElement('li');
       ulElement.appendChild(total);
       total.textContent='total     '+this.total+'cookies';
-    
-    
-    
+
+
+
             }
-            
-    
-        
+
+
+
         };
         console.log( Paris.customerper());
         console.log(Paris.customerPerHour)
         console.log(Paris.averageCookiesPurchased())
         console.log(Paris.avrageCookie)
         Paris.finaly();
-        
+
 
          //Lima
 
@@ -269,26 +404,26 @@ let Seattle = {
         customerPerHour: [],
         avrageCookie:[],
         total:0,
-    
-        
-    
+
+
+
         customerper: function () {
             for (let i = 0; i < Hour.length; i++) {
                 let num = perHpur(this.min, this.max);
                 this.customerPerHour[i] = num;
-                  
-                
-                
-    
+
+
+
+
             } },
             averageCookiesPurchased :function(){
                 for(let i=0;i<Hour.length;i++){
-        //      
+        //
                   this.avrageCookie.push(Math.floor(this.customerPerHour[i]*this.avrage));
                  this.total+=this.avrageCookie[i];
-    
-                     
-                    
+
+
+
                 }
             },
             finaly:function(){
@@ -307,19 +442,20 @@ let Seattle = {
       let total=document.createElement('li');
       ulElement.appendChild(total);
       total.textContent='total     '+this.total+'cookies';
-    
-    
-    
+
+
+
             }
-            
-    
-        
+
+
+
         };
         console.log( Lima.customerper());
         console.log(Lima.customerPerHour)
         console.log(Lima.averageCookiesPurchased())
         console.log(Lima.avrageCookie)
         Lima.finaly();
-        
-    
 
+
+
+*/
