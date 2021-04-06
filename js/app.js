@@ -122,23 +122,15 @@ tableElement.appendChild(trtable);
 City.prototype.render=function(){
 let thfirst=document.createElement('th');
 trtable.appendChild(thfirst);
-thfirst.textContent="  sss";
+thfirst.textContent="  ";
 
 for(i=0;i<=Hour.length;i++){
     let thHeader=document.createElement('th');
     trtable.appendChild(thHeader);
     thHeader.textContent=Hour[i];}
-    for(j=0;j<=salmon.length;i++){
-        let newtrtable=document.createElement('tr');
-        tableElement.appendChild(newtrtable);
-        let tdelement=document.createElement('td');
-        newtrtable.appendChild(tdelement);
-        tdelement.textContent=Seattle.avrageCookie[i];
-    }
-
     
-
 }
+
 
 Seattle.render();
 
