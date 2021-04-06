@@ -5,6 +5,7 @@ console.log(Hour.length, Hour);
 function perHpur(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
+//array to store obj
 let salmon = [];
 //constructor 
 function City(nameCity, min, max, avrage) {
@@ -15,7 +16,7 @@ function City(nameCity, min, max, avrage) {
     this.avrage = avrage;
     this.customerPerHour = [];
     this.avrageCookie = [];
-    total = 0;
+    this.total = 0;
 
 
 
@@ -102,13 +103,18 @@ let  Lima= new City('Lima',2, 16, 4.6);
 Lima.CustomPerHour();
 Lima.averageCookiesPurchased();
 
+for(i=0;i<salmon.length;i++){
+    salmon[i].averageCookiesPurchased();
 
+}
 
 
 
 
 console.log(salmon);
-
+for(let i=0;i<salmon.length;i++){
+    salmon[i].averageCookiesPurchased();
+}
 
 
 //vreate global table 
@@ -121,7 +127,7 @@ parent.appendChild(tableElement);
 let trtable = document.createElement('tr');
 //append tr
 tableElement.appendChild(trtable);
-// render 
+
    
 
     let thfirst = document.createElement('th');
@@ -139,12 +145,63 @@ function headerTable(){
 
 
     }
-}
-
-let thElementFinally = document.createElement('th');
+    let thElementFinally = document.createElement('th');
 trtable.appendChild(thElementFinally);
 thElementFinally.textContent = "total  ";
+}
+
+
+
+//create render function
+
+City.prototype.renderFun=function(){
+    let trRow=document.createElement('tr');
+
+    tableElement.appendChild(trRow);
+    let tdName=document.createElement('td');
+    trRow.appendChild(tdName);
+    //make text contant to first td this contain the name of city
+    tdName.textContent=this.nameCity;
+    for(i=0;i<Hour.length;i++){
+        let tdData=document.createElement('td');
+        trRow.appendChild(tdData);
+        tdData.textContent=this.avrageCookie[i];
+
+    }
+
+
+tdTotal=document.createElement('td');
+trRow.appendChild(tdTotal);
+tdTotal.textContent=this.total;
+}
+
+//footer function
+function footer(){
+    let fooRow=document.createElement('tr');
+    tableElement.appendChild(fooRow);
+    let thFooter=document.createElement('th');
+    fooRow.appendChild(thFooter);
+    thFooter.textContent="total";
+    let totalHour=0;
+    let margeTotal=0;
+    for(let i=0;i<Hour.length;i++){
+        totalHour=0;
+        for(let j=0;j<salmon.length;j++){
+            totalHour+=salmon[j].avrageCookie[i];
+            margeTotal+=salmon[j].avrageCookie[i];
+
+        }
+        let footerTh=document.createElement('th');
+        fooRow.appendChild(footerTh);
+        footerTh.textContent=totalHour;
+    }
+    let finallyTotal=document.createElement('th');
+    fooRow.appendChild(finallyTotal);
+    finallyTotal.textContent=margeTotal;
+
+}
 /*
+
 for (i = 0; i <= 4; i++) {
     let trE = document.createElement('tr');
     tableElement.appendChild(trE);
@@ -169,6 +226,12 @@ for (i = 0; i <= 4; i++) {
 //Seattle.render();
 
 headerTable();
+
+for(i=0;i<salmon.length;i++){
+    salmon[i].averageCookiesPurchased();
+    salmon[i].renderFun();
+}
+footer();
 
 /*
  lab-6
