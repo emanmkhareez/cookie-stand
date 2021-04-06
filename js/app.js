@@ -75,34 +75,34 @@ City.prototype.averageCookiesPurchased = function () {
 // seattle obj
 let Seattle = new City('seattle', 23, 65, 6.3);
 
-Seattle.CustomPerHour();
-Seattle.averageCookiesPurchased();
+//Seattle.CustomPerHour();
+//Seattle.averageCookiesPurchased();
 console.log(Seattle);
 
 
 // tokyo obj
 
 let  Tokyo= new City('Tokyo',3, 21, 1.2);
-//console.log(Tokyo);
-Tokyo.CustomPerHour();
-Tokyo.averageCookiesPurchased();
+console.log(Tokyo);
+//Tokyo.CustomPerHour();
+//Tokyo.averageCookiesPurchased();
  
 //Dubai obj 
 let Dubai = new City('Dubai',11, 38, 3.7);
-//console.log(Dubai);
-Dubai.CustomPerHour();
-Dubai.averageCookiesPurchased();
+console.log(Dubai);
+//Dubai.CustomPerHour();
+//Dubai.averageCookiesPurchased();
 //paris
 let Paris = new City('paris',20, 38, 2.3);
-//console.log(Paris);
-Paris.CustomPerHour();
-Paris.averageCookiesPurchased();
+console.log(Paris);
+//Paris.CustomPerHour();
+//Paris.averageCookiesPurchased();
 //Lima
 let  Lima= new City('Lima',2, 16, 4.6);
-//console.log(Lima);
-Lima.CustomPerHour();
-Lima.averageCookiesPurchased();
-
+console.log(Lima);
+//Lima.CustomPerHour();
+//Lima.averageCookiesPurchased();
+/*
 for(i=0;i<salmon.length;i++){
     salmon[i].averageCookiesPurchased();
 
@@ -110,12 +110,11 @@ for(i=0;i<salmon.length;i++){
 
 
 
-
 console.log(salmon);
 for(let i=0;i<salmon.length;i++){
     salmon[i].averageCookiesPurchased();
 }
-
+*/
 
 //vreate global table 
 let parent = document.getElementById('parent');
@@ -124,19 +123,23 @@ let tableElement = document.createElement('table');
 //append 
 parent.appendChild(tableElement);
 //tr
-let trtable = document.createElement('tr');
-//append tr
-tableElement.appendChild(trtable);
+
 
    
 
-    let thfirst = document.createElement('th');
+    
+
+//create the header  function
+function headerTable(){
+
+    let trtable = document.createElement('tr');
+//append tr
+tableElement.appendChild(trtable);
+
+let thfirst = document.createElement('th');
     trtable.appendChild(thfirst);
     thfirst.textContent = "name   ";
     
-
-//create the header function
-function headerTable(){
     for (i = 0; i < Hour.length; i++) {
 
         let thHeader = document.createElement('th');
@@ -228,6 +231,7 @@ for (i = 0; i <= 4; i++) {
 headerTable();
 
 for(i=0;i<salmon.length;i++){
+    salmon[i].CustomPerHour();
     salmon[i].averageCookiesPurchased();
     salmon[i].renderFun();
 }
