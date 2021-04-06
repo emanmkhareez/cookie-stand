@@ -111,8 +111,7 @@ console.log(salmon);
 
 
 
-let array3=[Seattle.avrageCookie,Tokyo.avrageCookie,Paris.avrageCookie,Dubai.avrageCookie,Lima.avrageCookie];
-console.log(array3);
+//vreate global table 
 let parent = document.getElementById('parent');
 //create table
 let tableElement = document.createElement('table');
@@ -123,15 +122,16 @@ let trtable = document.createElement('tr');
 //append tr
 tableElement.appendChild(trtable);
 // render 
-let name=['Seattle','Tokyo','Dubai','Paris','Lima'];
-City.prototype.render = function () {
+   
+
     let thfirst = document.createElement('th');
     trtable.appendChild(thfirst);
-    thfirst.textContent = "  ";
+    thfirst.textContent = "name   ";
     
 
-
-    for (i = 0; i <= Hour.length; i++) {
+//create the header function
+function headerTable(){
+    for (i = 0; i < Hour.length; i++) {
 
         let thHeader = document.createElement('th');
         trtable.appendChild(thHeader);
@@ -139,10 +139,12 @@ City.prototype.render = function () {
 
 
     }
-
 }
 
-
+let thElementFinally = document.createElement('th');
+trtable.appendChild(thElementFinally);
+thElementFinally.textContent = "total  ";
+/*
 for (i = 0; i <= 4; i++) {
     let trE = document.createElement('tr');
     tableElement.appendChild(trE);
@@ -155,7 +157,7 @@ for (i = 0; i <= 4; i++) {
 
     }
 }
- 
+ */
     
     
 
@@ -164,9 +166,9 @@ for (i = 0; i <= 4; i++) {
 
 
 
-Seattle.render();
+//Seattle.render();
 
-
+headerTable();
 
 /*
  lab-6
