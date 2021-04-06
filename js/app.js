@@ -1,4 +1,4 @@
-
+'use strict'
 let Hour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 console.log(Hour.length, Hour);
 
@@ -140,7 +140,7 @@ let thfirst = document.createElement('th');
     trtable.appendChild(thfirst);
     thfirst.textContent = "name   ";
     
-    for (i = 0; i < Hour.length; i++) {
+    for (let i = 0; i < Hour.length; i++) {
 
         let thHeader = document.createElement('th');
         trtable.appendChild(thHeader);
@@ -165,7 +165,7 @@ City.prototype.renderFun=function(){
     trRow.appendChild(tdName);
     //make text contant to first td this contain the name of city
     tdName.textContent=this.nameCity;
-    for(i=0;i<Hour.length;i++){
+    for(let i=0;i<Hour.length;i++){
         let tdData=document.createElement('td');
         trRow.appendChild(tdData);
         tdData.textContent=this.avrageCookie[i];
@@ -173,7 +173,7 @@ City.prototype.renderFun=function(){
     }
 
 
-tdTotal=document.createElement('td');
+ let tdTotal=document.createElement('td');
 trRow.appendChild(tdTotal);
 tdTotal.textContent=this.total;
 }
@@ -185,10 +185,10 @@ function footer(){
     let thFooter=document.createElement('th');
     fooRow.appendChild(thFooter);
     thFooter.textContent="total";
-    let totalHour=0;
+   
     let margeTotal=0;
     for(let i=0;i<Hour.length;i++){
-        totalHour=0;
+        let totalHour=0;
         for(let j=0;j<salmon.length;j++){
             totalHour+=salmon[j].avrageCookie[i];
             margeTotal+=salmon[j].avrageCookie[i];
@@ -230,7 +230,7 @@ for (i = 0; i <= 4; i++) {
 
 headerTable();
 
-for(i=0;i<salmon.length;i++){
+for(let i=0;i<salmon.length;i++){
     salmon[i].CustomPerHour();
     salmon[i].averageCookiesPurchased();
     salmon[i].renderFun();
