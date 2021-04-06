@@ -5,37 +5,37 @@ console.log(Hour.length, Hour);
 function perHpur(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
-let salmon=[];
+let salmon = [];
 //constructor 
-function City(nameCity,min, max, avrage) {
-    this.nameCity=nameCity;
+function City(nameCity, min, max, avrage) {
+    this.nameCity = nameCity;
     this.min = min;
 
     this.max = max;
     this.avrage = avrage;
-    this.customerPerHour= [];
-    this.avrageCookie=[];
-    total=0;
-
-   
-
-/*
-this.CustomPerHour=function(){
-    for (let i = 0; i < Hour.length; i++) {
-        let num = perHpur(this.min, this.max);
-        this.customerPerHour[i] = num;
+    this.customerPerHour = [];
+    this.avrageCookie = [];
+    total = 0;
 
 
 
-
+    /*
+    this.CustomPerHour=function(){
+        for (let i = 0; i < Hour.length; i++) {
+            let num = perHpur(this.min, this.max);
+            this.customerPerHour[i] = num;
+    
+    
+    
+    
+        }
+    
+    
+    
     }
+    */
 
-
-
-}
-*/
-
-salmon.push(this);
+    salmon.push(this);
 
 
 }
@@ -43,7 +43,7 @@ salmon.push(this);
 
 
 //protoype customer
-City.prototype.CustomPerHour=function () {
+City.prototype.CustomPerHour = function () {
     for (let i = 0; i < Hour.length; i++) {
         let num = perHpur(this.min, this.max);
         console.log(num);
@@ -60,7 +60,7 @@ City.prototype.CustomPerHour=function () {
 
 
 // protoype averageCookiesPurchased 
-City.prototype.averageCookiesPurchased=function () {
+City.prototype.averageCookiesPurchased = function () {
     for (let i = 0; i < Hour.length; i++) {
         //      
         this.avrageCookie.push(Math.floor(this.customerPerHour[i] * this.avrage));
@@ -68,68 +68,100 @@ City.prototype.averageCookiesPurchased=function () {
 
 
 
-    }}
+    }
+}
 
 // seattle obj
-       let Seattle = new City('seattle',23, 65, 6.3);
-       console.log(Seattle);
-       Seattle.CustomPerHour();
-       Seattle.averageCookiesPurchased();
-       
+let Seattle = new City('seattle', 23, 65, 6.3);
+
+Seattle.CustomPerHour();
+Seattle.averageCookiesPurchased();
+console.log(Seattle);
+
+
 // tokyo obj
 
-       let  Tokyo= new City('Tokyo',3, 21, 1.2);
-       console.log(Tokyo);
-       Tokyo.CustomPerHour();
-       Tokyo.averageCookiesPurchased();
- //Dubai obj 
-       let Dubai = new City('Dubai',11, 38, 3.7);
-       console.log(Dubai);
-       Dubai.CustomPerHour();
-       Dubai.averageCookiesPurchased();
+let  Tokyo= new City('Tokyo',3, 21, 1.2);
+//console.log(Tokyo);
+Tokyo.CustomPerHour();
+Tokyo.averageCookiesPurchased();
+ 
+//Dubai obj 
+let Dubai = new City('Dubai',11, 38, 3.7);
+//console.log(Dubai);
+Dubai.CustomPerHour();
+Dubai.averageCookiesPurchased();
 //paris
-       let Paris = new City('paris',20, 38, 2.3);
-       console.log(Paris);
-       Paris.CustomPerHour();
-       Paris.averageCookiesPurchased();
+let Paris = new City('paris',20, 38, 2.3);
+//console.log(Paris);
+Paris.CustomPerHour();
+Paris.averageCookiesPurchased();
 //Lima
-       let  Lima= new City('Lima',2, 16, 4.6);
-       console.log(Lima);
-       Lima.CustomPerHour();
-       Lima.averageCookiesPurchased();
-
-
-       
-       
-      
-
-    console.log(salmon);
+let  Lima= new City('Lima',2, 16, 4.6);
+//console.log(Lima);
+Lima.CustomPerHour();
+Lima.averageCookiesPurchased();
 
 
 
 
 
-let parent=document.getElementById('parent');
+
+console.log(salmon);
+
+
+
+let array3=[Seattle.avrageCookie,Tokyo.avrageCookie,Paris.avrageCookie,Dubai.avrageCookie,Lima.avrageCookie];
+console.log(array3);
+let parent = document.getElementById('parent');
 //create table
-let tableElement=document.createElement('table');
+let tableElement = document.createElement('table');
 //append 
 parent.appendChild(tableElement);
 //tr
-let trtable=document.createElement('tr');
+let trtable = document.createElement('tr');
 //append tr
 tableElement.appendChild(trtable);
 // render 
-City.prototype.render=function(){
-let thfirst=document.createElement('th');
-trtable.appendChild(thfirst);
-thfirst.textContent="  ";
-
-for(i=0;i<=Hour.length;i++){
-    let thHeader=document.createElement('th');
-    trtable.appendChild(thHeader);
-    thHeader.textContent=Hour[i];}
+let name=['Seattle','Tokyo','Dubai','Paris','Lima'];
+City.prototype.render = function () {
+    let thfirst = document.createElement('th');
+    trtable.appendChild(thfirst);
+    thfirst.textContent = "  ";
     
+
+
+    for (i = 0; i <= Hour.length; i++) {
+
+        let thHeader = document.createElement('th');
+        trtable.appendChild(thHeader);
+        thHeader.textContent = Hour[i];
+
+
+    }
+
 }
+
+
+for (i = 0; i <= 4; i++) {
+    let trE = document.createElement('tr');
+    tableElement.appendChild(trE);
+
+    for (j = 0; j <=14; j++) {
+        let tdfirst = document.createElement('td');
+        trE.appendChild(tdfirst);
+        
+        tdfirst.textContent =array3[i][j];
+
+    }
+}
+ 
+    
+    
+
+
+
+
 
 
 Seattle.render();
@@ -137,7 +169,7 @@ Seattle.render();
 
 
 /*
- lab-6 
+ lab-6
 
 let Seattle = {
     min: 23,
