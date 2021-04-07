@@ -1,4 +1,7 @@
 'use strict'
+
+   
+    
 let Hour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 console.log(Hour.length, Hour);
 
@@ -219,8 +222,7 @@ for (i = 0; i <= 4; i++) {
     }
 }
  */
-    
-    
+
 
 
 
@@ -237,6 +239,61 @@ for(let i=0;i<salmon.length;i++){
     salmon[i].renderFun();
 }
 footer();
+
+
+
+// get id to the form
+let formCity=document.getElementById('city'); 
+console.log(formCity);
+// add event to submit form
+formCity.addEventListener('submit',formSubmit);
+
+function formSubmit(event){
+    event.preventDefault();
+    console.log(event);
+    //to get the value to input inside form use event.target.nameOfInput.value like this.
+    
+//get name that inside form
+    let name=event.target.name.value;
+    console.log(name);
+
+//get min  that inside form
+    let min=event.target.min.value;
+    console.log(min);
+
+//get max  that inside form
+    let max=event.target.max.value;
+    console.log(max);
+
+    //get avrage  that inside form
+    let avarge=event.target.avarge.value;
+    console.log(avarge);
+
+ // create new city to push that to array object" City"
+ let addNewCity=new City(name,min,max,avarge);
+ console.log(addNewCity);
+ //reset the table 
+tableElement.textContent='';
+ headerTable();
+
+ for(let i=0;i<salmon.length;i++){
+    salmon[i].CustomPerHour();
+    salmon[i].averageCookiesPurchased();
+    salmon[i].renderFun();
+
+}
+footer();
+}
+
+
+
+
+
+
+
+
+
+
 
 /*
  lab-6
