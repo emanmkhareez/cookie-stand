@@ -1,0 +1,49 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("img/cutter.jpeg");
+
+
+
+}
+
+nav {
+    background-color: #58a0e7;
+    height: 70px;
+    width: 100%;
+
+}
+.logo {
+    color: white;
+    font-size: 40px;
+    padding: 0;
+
+
+    margin-top: 0px;
+
+
+}
+nav ul {
+    
+    float: right;
+    margin-right: 500px;
+   padding-bottom: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 20px;
+    margin: 30 20px;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 30px;
+
+
+
+}
+li a {
+    position: relative;
+    bottom: 10ox;
+            color: white;
+        }                                       
+        
