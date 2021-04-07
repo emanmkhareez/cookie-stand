@@ -169,6 +169,7 @@ City.prototype.renderFun=function(){
         let tdData=document.createElement('td');
         trRow.appendChild(tdData);
         tdData.textContent=this.avrageCookie[i];
+        
 
     }
 
