@@ -1,0 +1,98 @@
+body {
+    padding: 0;
+    margin: 0;
+    
+
+
+}
+
+nav {
+    background-color: #58a0e7;
+    height: 70px;
+    width: 100%;
+
+}
+.logo {
+    color: white;
+    font-size: 40px;
+    padding: 0;
+
+
+    margin-top: 0px;
+
+
+}
+nav ul {
+    
+    float: right;
+    margin-right: 500px;
+   padding-bottom: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 20px;
+    margin: 30 20px;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 30px;
+
+
+
+}
+li a {
+    position: relative;
+    bottom: 10ox;
+    color: white;
+}
+         form fieldset{
+             position: relative;
+             top: -30px;
+             left: 90px;
+             bottom: 10px;
+            background-color: #b9d7f5;
+             width: 600px;
+             height: 400px;
+             
+             
+
+         }
+         
+         form fieldset legend{
+             font-size: 16px;
+             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+         }
+         form fieldset  label{
+             font-size: 20px;
+            
+             position: relative;
+             top: 0px;
+             left: 10px;
+             padding-top: 30px;
+
+             
+         }
+         #img2{
+             position:absolute;
+             float: right;
+             left: 800px;
+             bottom: 100px;
+         }
+         
+        .inputDiv{
+            
+            
+
+        }
+        #submit #btn{
+            width: 80px;
+        }
+        #btn{
+           background-color: rgb(157, 240, 157);
+       font-weight: bold;
+           color:black;
+           size: 100px;
+        }
+        table th td{
+            border: violet solid 2;
+        }
