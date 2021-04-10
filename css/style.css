@@ -4,6 +4,8 @@ body {
     
 
 
+
+
 }
 
 nav {
@@ -12,6 +14,7 @@ nav {
     width: 100%;
 
 }
+
 .logo {
     color: white;
     font-size: 40px;
@@ -28,7 +31,6 @@ nav ul {
     margin-right: 500px;
    padding-bottom: 20px;
 }
-
 nav ul li {
     display: inline-block;
     line-height: 20px;
@@ -43,6 +45,48 @@ nav ul li {
 li a {
     position: relative;
     bottom: 10ox;
-            color: white;
-        }                                       
+    color: white;
+}                        
         
+#imgbody{
+    position: relative;
+    z-index: -1;
+    bottom: 140px;
+    width: 1600px;
+    height:400px;
+    
+    background-color: black;
+    
+    
+}
+
+#salmonp{
+    position:absolute;
+    z-index: 1;
+    font-family: 'Pacifico', cursive;
+    background-color:black
+    width: 500px;
+    height: 200px;
+    left: 500px;
+    opacity: 0.9;
+   
+}
+#divmain{
+    position: absolute;
+    top:230px;
+    left: 450px;
+    font-family: 'Architects Daughter', cursive;
+    
+    font-size: 40px;
+    font-weight:bolder;
+    color: rgb(7, 51, 13);
+    
+    
+}
+#sub-menu{
+    display:none;
+}
+nav ul li  :hover #sub-menu ul li{
+    display: block;
+    position: absolute;
+}
