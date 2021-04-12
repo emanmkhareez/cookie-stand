@@ -1,17 +1,25 @@
 body {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    background-color: antiquewhite;
     
 
 
 
 
 }
+.drop{
+    margin: 0 auto;
+
+
+}
 
 nav {
-    background-color: #58a0e7;
+   background-color:  rgb(50, 91, 97);
     height: 70px;
     width: 100%;
+
 
 }
 
@@ -25,11 +33,12 @@ nav {
 
 
 }
+ 
 nav ul {
     
     float: right;
     margin-right: 500px;
-   padding-bottom: 20px;
+   padding-bottom: 30px;
 }
 nav ul li {
     display: inline-block;
@@ -42,17 +51,37 @@ nav ul li {
 
 
 }
-li a {
+ nav ul li a {
     position: relative;
-    bottom: 10ox;
+    bottom: 15px;
     color: white;
-}                        
-        
+   text-decoration: none;
+   font-family:sans-serif;
+}     
+nav ul ul{
+    position:absolute;
+    top: 60px;
+    display: none;
+}  
+nav ul li:hover ul{
+    display: block;
+}                 
+     
+nav ul ul li{
+    width: 150px;
+    float: none;
+    display: list-item;
+    background-color: rgb(50, 91, 97);
+    padding: 10px;
+    font-size: 16px;
+    color: blanchedalmond;
+
+}
 #imgbody{
     position: relative;
     z-index: -1;
     bottom: 140px;
-    width: 1600px;
+    width: 1515px;
     height:400px;
     
     background-color: black;
@@ -64,17 +93,17 @@ li a {
     position:absolute;
     z-index: 1;
     font-family: 'Pacifico', cursive;
-    background-color:black
+    color: tomato;
     width: 500px;
     height: 200px;
-    left: 500px;
+    left: 300px;
     opacity: 0.9;
    
 }
 #divmain{
     position: absolute;
     top:230px;
-    left: 450px;
+    left: 300px;
     font-family: 'Architects Daughter', cursive;
     
     font-size: 40px;
@@ -89,4 +118,43 @@ li a {
 nav ul li  :hover #sub-menu ul li{
     display: block;
     position: absolute;
+}
+ 
+div p{
+    position: relative;
+    bottom: 160px;
+  font-family:serif;
+    font-size: 18px;
+    text-align: justify;
+    
+}
+center #dote{
+    position: relative;
+    width:100px ;
+    bottom: 140px;
+
+   
+    
+}
+#dote2{
+    position: relative;
+    width:100px ;
+    bottom: 180px;
+}
+.imgs{
+    display: inline;
+}
+.imgs img{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    background-color:  rgb(50, 91, 97);
+}
+#email{
+   
+    margin-top: -90px;
+    padding-left: 600px;
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
 }

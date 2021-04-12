@@ -287,7 +287,23 @@ footer();
 
 
 
+let arr=[1,4,7];
+arr.length=5;
+console.log(arr);
+arr.push(6);
+arr.push(6);
+arr.push(8);
+console.log(arr);
 
+let count;
+
+for(let i=0;i<5;i++)
+
+{
+
+console.log(count+1);
+
+}
 
 
 

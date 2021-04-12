@@ -1,17 +1,28 @@
 body {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    background-color:white;
     
+
+
+
+
+}
+.drop{
+    margin: 0 auto;
 
 
 }
 
 nav {
-    background-color: #58a0e7;
+   background-color:  rgb(50, 91, 97);
     height: 70px;
     width: 100%;
 
+
 }
+
 .logo {
     color: white;
     font-size: 40px;
@@ -22,13 +33,13 @@ nav {
 
 
 }
+ 
 nav ul {
     
     float: right;
     margin-right: 500px;
-   padding-bottom: 20px;
+   padding-bottom: 30px;
 }
-
 nav ul li {
     display: inline-block;
     line-height: 20px;
@@ -40,10 +51,31 @@ nav ul li {
 
 
 }
-li a {
+ nav ul li a {
     position: relative;
-    bottom: 10ox;
+    bottom: 15px;
     color: white;
+   text-decoration: none;
+   font-family:sans-serif;
+}     
+nav ul ul{
+    position:absolute;
+    top: 60px;
+    display: none;
+}  
+nav ul li:hover ul{
+    display: block;
+}                 
+     
+nav ul ul li{
+    width: 150px;
+    float: none;
+    display: list-item;
+    background-color: rgb(50, 91, 97);
+    padding: 10px;
+    font-size: 16px;
+    color: blanchedalmond;
+
 }
          form fieldset{
              position: relative;
